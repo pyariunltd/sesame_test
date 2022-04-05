@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+
+<div class="header">
+  <h2>Blog Name</h2>
+</div>
+
+<div class="row">
+  <div class="leftcolumn">
+      <label for="category"> Select Category </label>
+<select name="category">
+    {% for catogory in categories%}
+    <option value="{{category.id}}">{{category.name}}</option>
+    {%endfor%}
+</select>
+<div>
+    {% for blog in blogs%}
+    <div class="card">
+      <h2>{{blog.blog_title}}</h2>
+      <h5>{{blog.created_date}}</h5>
+      <p>{{blog.content}}</p>
+    </div>
+  </div>
+
+  {% endfor %}
+</div>
+</div>
+
+</body>
+</html>
